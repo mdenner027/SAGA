@@ -1,6 +1,7 @@
 package br.edu.ufersa.saga.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
@@ -113,20 +114,26 @@ public class AtendimentoController {
 	public String atendimentoData(String data, Model model) {
 		Calendar dataAtendimento = Calendar.getInstance();
 		try {
-			Date d = new SimpleDateFormat("dd/MM/yyyy").parse(data);
-			dataAtendimento.setTime(d);
+			if (data.contains("-")) {
+				Date d = new SimpleDateFormat("yyyy-MM-dd").parse(data);
+				dataAtendimento.setTime(d);
+			} else if (data.contains("/")) {
+				Date d = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+				dataAtendimento.setTime(d);
+			}
 		} catch (java.text.ParseException e) {
 			throw new RuntimeException(e);
 		}
 		List<Atendimento> atendimentos = atendimentoRepository.findByAtivoAtendimentoOrderByDataAtendimentoDesc(1);
+		List<Atendimento> atendimentos2 = new ArrayList<Atendimento>();
 		for (Iterator<Atendimento> it = atendimentos.iterator(); it.hasNext();) {
 			Atendimento atendimento = it.next();
-			if (!(comparaDatas(dataAtendimento, atendimento.getDataAtendimento()))) {
-				atendimentos.remove(atendimento);
+			if ((comparaDatas(dataAtendimento, atendimento.getDataAtendimento()))) {
+				atendimentos2.add(atendimento);
 			}
 		}
 		model.addAttribute("data", dataAtendimento);
-		model.addAttribute("atendimentos", atendimentos);
+		model.addAttribute("atendimentos", atendimentos2);
 		return "atendimentos-por-data";
 	}
 
@@ -164,15 +171,15 @@ public class AtendimentoController {
 		return "atendimentos-por-tipo";
 	}
 
-	
 	@RequestMapping(value = "atendimentos-por-demanda", method = RequestMethod.POST)
 	public String getAtendimentosPorDemanda(Long codigo, Model model) {
 		DemandaAtendimento demanda = demandaRepository.findByCodigoDemandaAtendimento(codigo);
-		model.addAttribute("atendimentos", atendimentoRepository.findByAtivoAtendimentoAndDemandaAtendimentoOrderByDataAtendimentoDesc(1, demanda));
+		model.addAttribute("atendimentos", atendimentoRepository
+				.findByAtivoAtendimentoAndDemandaAtendimentoOrderByDataAtendimentoDesc(1, demanda));
 		model.addAttribute("demanda", demanda);
 		return "atendimentos-por-demanda";
 	}
-	
+
 	@RequestMapping(value = "excluir-atendimento", method = RequestMethod.POST)
 	public String excluirAtendimento(Long id) {
 		Atendimento atendimento = atendimentoRepository.findByCodigoAtendimento(id);

@@ -136,6 +136,7 @@
               			<form action="atendimentos-por-data" method="post">
 		             		<div class="input-group no-border">
 	                			<input type="date" title="Buscar atendimento pela data" id="nomeDiscente" list="discentes" required="required" value="" class="form-control" name="data">
+	                			<input type="text" hidden="hidden" name="busca" value="1">
 	                			<div class="input-group-append">
 	                  			<div class="input-group-text">
 	                  			<button style="margin: -5px;font-size: 12px" class="redondo btn-info btn">Buscar &nbsp;<i class="now-ui-icons ui-1_zoom-bold"></i></button>
