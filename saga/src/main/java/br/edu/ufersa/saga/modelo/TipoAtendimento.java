@@ -21,7 +21,7 @@ public class TipoAtendimento implements Serializable, Comparable<TipoAtendimento
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "codigo_tipo_atendimento", nullable = false, insertable = false)
-	private int codigoTipoAtendimento;
+	private Long codigoTipoAtendimento;
 
 	@Column(name = "nome_tipo_atendimento", nullable = false)
 	private String nomeTipoAtendimento;
@@ -46,11 +46,11 @@ public class TipoAtendimento implements Serializable, Comparable<TipoAtendimento
 		return 0;
 	}
 	
-	public int getCodigoTipoAtendimento() {
+	public Long getCodigoTipoAtendimento() {
 		return codigoTipoAtendimento;
 	}
 
-	public void setCodigoTipoAtendimento(int codigoTipoAtendimento) {
+	public void setCodigoTipoAtendimento(Long codigoTipoAtendimento) {
 		this.codigoTipoAtendimento = codigoTipoAtendimento;
 	}
 

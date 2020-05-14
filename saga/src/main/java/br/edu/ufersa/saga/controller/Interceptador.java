@@ -3,8 +3,10 @@ package br.edu.ufersa.saga.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+@Component
 public class Interceptador extends HandlerInterceptorAdapter {
 
 	@Override

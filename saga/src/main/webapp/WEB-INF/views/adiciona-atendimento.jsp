@@ -56,6 +56,7 @@
       </style>
       <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/11/intl/pt_br/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/11/intl/pt_br/util.js"></script>
       <script type="text/javascript" charset="UTF-8" src="assets/js/funcoes.js"></script>
+      <script type="text/javascript" charset="UTF-8" src="assets/libs/js/funcoes-gerais.js"></script>
       <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/11/intl/pt_br/util.js"></script>
   		
   		<script>
@@ -83,7 +84,10 @@
             <div class="logo">
                <a href="#" class="simple-text logo-normal d-flex justify-content-center"><b>SAGA</b></a>
             </div>
-            <c:import url="header.jsp"/>
+            <c:import url="header.jsp"></c:import>
+            <script>
+				ativaMenu("atendimentos");
+            </script>
            </div>
          <div class="main-panel ps ps--active-y" id="main-panel">
             <!-- Navbar -->

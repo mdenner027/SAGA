@@ -67,6 +67,9 @@
                <a href="" class="simple-text logo-normal d-flex justify-content-center"><b>SAGA</b></a>
             </div>
             <c:import url="header.jsp"/>
+            <script>
+			ativaMenu("cursos");
+        </script>
             </div>
          <div class="main-panel ps ps--active-y" id="main-panel">
             <!-- Navbar -->

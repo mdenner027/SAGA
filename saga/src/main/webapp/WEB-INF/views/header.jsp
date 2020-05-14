@@ -9,43 +9,43 @@
 <body>
       <div class="sidebar-wrapper ps ps--active-y" id="sidebar-wrapper">
         <ul class="nav">
-                  <li class="active">
+                  <li id="dashboard">
                      <a href="dashboard" onclick="">
                         <i class="now-ui-icons design_app"></i>
                         <p>Início</p>
                      </a>
                   </li>
-                  <li>
+                  <li id="atendimentos">
                      <a href="atendimentos-registrados">
                         <i class="now-ui-icons education_paper"></i>
                         <p>Registro de Atendimentos</p>
                      </a>
                   </li>
-                  <li>
+                  <li id="discentes">
                      <a href="discentes-registrados">
                         <i class="now-ui-icons education_hat"></i>
                         <p>Registro de Discentes</p>
                      </a>
                   </li>
-                  <li>
+                  <li id="cursos">
                      <a href="cursos-registrados">
                         <i class="now-ui-icons files_paper"></i>
                         <p>Registro de Cursos</p>
                      </a>
                   </li>
-                  <li>
+                  <li id="demandas">
                      <a href="demandas-de-atendimento-registradas">
                         <i class="now-ui-icons ui-1_settings-gear-63"></i>
                         <p>Demandas</p>
                      </a>
                   </li>
-                  <li>
+                  <li id="tipos">
                      <a href="tipos-de-atendimento-registrados">
                         <i class="now-ui-icons ui-1_settings-gear-63"></i>
                         <p>Tipos de Atendimentos</p>
                      </a>
                   </li>
-                  <li>
+                  <li id="encaminhamentos">
                      <a href="encaminhamentos-registrados">
                         <i class="now-ui-icons ui-1_settings-gear-63"></i>
                         <p>Encaminhamentos</p>
